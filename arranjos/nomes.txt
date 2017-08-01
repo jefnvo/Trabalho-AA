@@ -1,0 +1,11 @@
+
+aleatorio256.txt
+aleatorio512.txt
+aleatorio1024.txt
+aleatorio2048.txt
+aleatorio4096.txt
+aleatorio8192.txt
+aleatorio16384.txt
+aleatorio32768.txt
+aleatorio65536.txt
+aleatorio131072.txt

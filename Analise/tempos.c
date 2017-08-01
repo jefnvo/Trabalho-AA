@@ -6,7 +6,7 @@ char nome[80];
 
 uint64_t soma;
 
-void le_ordena_grava_tempo (void funcao_ordenacao(int *arr, int size), FILE *tempos, FILE *reader)
+void le_ordena_grava_tempo (int funcao(int *arr, int size), FILE *tempos, FILE *reader)
 {
     int size, *vet, i;
 

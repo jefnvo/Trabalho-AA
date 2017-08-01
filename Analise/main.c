@@ -9,10 +9,10 @@ int main()
 
     do
     {
-        printf("1 - heap sort\n");
-        printf("2 - merge sort\n");
-        printf("3 - quick sort\n");
-        printf("4 - radix sort\n");
+        printf("1 - corte haste\n");
+        printf("2 - corte haste memoizado\n");
+        printf("3 - corte haste bottom up\n");
+        printf("4 - corte haste bottom up extendido\n");
         printf("5 - insertion sort\n");
         printf("6 - counting sort\n");
         printf("0 - sair\n\n");
@@ -23,19 +23,19 @@ int main()
         switch (op)
         {
         case 1:
-            tempos = fopen("tempos/heapsort.txt", "w");
-            le_ordena_grava_tempo(heapsort,tempos,reader);
+            tempos = fopen("tempos/corteHaste.txt", "w");
+            le_ordena_grava_tempo(corteHaste,tempos,reader);
             rewind(reader);
             break;
 
         case 2:
-            tempos = fopen("tempos/mergesort.txt", "w");
-            le_ordena_grava_tempo(mergesort, tempos,reader);
+            tempos = fopen("tempos/corteHasteMemoizado.txt", "w");
+            le_ordena_grava_tempo(corteHasteMemoizado, tempos,reader);
             rewind(reader);
             break;
 
         case 3:
-            tempos = fopen("tempos/quicksort.txt", "w");
+            tempos = fopen("tempos/corteBottomUp.txt", "w");
             le_ordena_grava_tempo(quicksort, tempos,reader);
             rewind(reader);
             break;
