@@ -1,16 +1,13 @@
 #include <stdlib.h>
 #include <math.h>
 
-void heapsort(int *arr, int size);
 
-void radixSort(int *arr, int size);
+int corteHaste(int p[], int n);
 
-void quicksort(int *arr, int size);
+int corteHasteMemoizado(int p[], int n);
 
-void insertionSort(int *arr, int size);
+int corteHasteMemoizadoAux(int *p, int n, int *r);
 
-void countingsort(int *arr, int size);
-
-void mergesort(int *arr, int tam);
+int corteBottomUp(int p[], int n);
 
 

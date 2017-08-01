@@ -18,4 +18,4 @@
 struct timespec inicio, fim;
 uint64_t tempo_de_cpu;
 
-void le_ordena_grava_tempo (void funcao_ordenacao(int *arr, int tam), FILE *tempos, FILE *reader);
+void le_ordena_grava_tempo (int funcao_ordenacao(int *arr, int tam), FILE *tempos, FILE *reader);
