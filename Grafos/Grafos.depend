@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1501590767 source:/home/jeff/Documentos/3 - Segundo Trabalho AA/Grafos/Grafos/grafoListaAdj.c
+	"grafoListaAdj.h"
+
+1501590767 /home/jeff/Documentos/3 - Segundo Trabalho AA/Grafos/Grafos/grafoListaAdj.h
+	<stdio.h>
+	<stdlib.h>
+
+1501626498 source:/home/jeff/Documentos/3 - Segundo Trabalho AA/Grafos/Grafos/grafos.c
+	"grafos.h"
+
+1501623622 /home/jeff/Documentos/3 - Segundo Trabalho AA/Grafos/Grafos/grafos.h
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+	<time.h>
+	<string.h>
+
+1501623841 source:/home/jeff/Documentos/3 - Segundo Trabalho AA/Grafos/Grafos/main.c
+	"grafos.h"
+
+1501591805 source:/home/jeff/Documentos/3 - Segundo Trabalho AA/Grafos/Grafos/grafosAdj.c
+	"grafosAdj.h"
+
+1501591804 /home/jeff/Documentos/3 - Segundo Trabalho AA/Grafos/Grafos/grafosAdj.h
+	<stdio.h>
+	<stdlib.h>
+
