@@ -14,8 +14,17 @@
    tempo_de_cpu = BILHAO * (fim.tv_sec - inicio.tv_sec) + fim.tv_nsec - inicio.tv_nsec; \
    }
 
+#define CRONOMETRA2(funcao, vetor1, vetor2, tam1, tam2) {                               \
+   clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &inicio);                                    \
+   funcao(vetor1, vetor2, tam1, tam2);                                                  \
+   clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &fim);                                       \
+   tempo_de_cpu = BILHAO * (fim.tv_sec - inicio.tv_sec) + fim.tv_nsec - inicio.tv_nsec; \
+   }
+
 
 struct timespec inicio, fim;
 uint64_t tempo_de_cpu;
 
 void le_ordena_grava_tempo (void funcao_ordenacao(int *arr, int tam), FILE *tempos, FILE *reader);
+
+void le_ordena_grava_tempo2 (void funcao_ordenacao(int *arr1, int *arr2, int tam1, int tam2), FILE *tempos, FILE *reader);

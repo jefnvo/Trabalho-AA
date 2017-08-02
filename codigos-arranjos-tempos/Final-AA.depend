@@ -40,8 +40,9 @@
 	<stdio.h>
 	<string.h>
 
-1501640911 source:/home/vinicius/Documentos/Trabalho-AA/codigos-arranjos-tempos/main.c
+1501646201 source:/home/vinicius/Documentos/Trabalho-AA/codigos-arranjos-tempos/main.c
 	"ordenacoes.h"
+	"algoritmos.h"
 
 1501638900 /home/vinicius/Documentos/Trabalho-AA/codigos-arranjos-tempos/ordenacoes.h
 	<stdio.h>
@@ -49,7 +50,7 @@
 	<string.h>
 	"tempos.h"
 
-1501640416 /home/vinicius/Documentos/Trabalho-AA/codigos-arranjos-tempos/tempos.h
+1501691191 /home/vinicius/Documentos/Trabalho-AA/codigos-arranjos-tempos/tempos.h
 	<stdint.h>
 	<time.h>
 	"algoritmos.h"
