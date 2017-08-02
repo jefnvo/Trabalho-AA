@@ -1,4 +1,5 @@
 #include "ordenacoes.h"
+#include "algoritmos.h"
 
 int main()
 {
@@ -13,8 +14,10 @@ int main()
         printf("2 - corte haste memoizado\n");
         printf("3 - corte haste bottom up\n");
         printf("4 - \n");
-        printf("5 - t\n");
-        printf("6 - \n");
+        printf("5 - Seletor guloso de atividades\n");
+        printf("6 - Seletor guloso de atividades recursivo\n");
+        printf("7 - Arvore Huffman\n");
+        printf("6 - Seletor guloso de atividades recursivo\n");
         printf("0 - sair\n\n");
 
         fflush(stdin);
@@ -47,14 +50,20 @@ int main()
             break;
 
         case 5:
-            tempos = fopen("tempos/insertionsort.txt", "w");
-//            le_ordena_grava_tempo(insertionSort, tempos,reader);
+            tempos = fopen("tempos/seletorGuloso.txt", "w");
+            le_ordena_grava_tempo(corteBottomUp, tempos,reader);
             rewind(reader);
             break;
 
         case 6:
-            tempos = fopen("tempos/coutingsort.txt", "w");
-//            le_ordena_grava_tempo(countingsort, tempos,reader);
+            tempos = fopen("tempos/seletorGulosoRecursivo.txt", "w");
+            le_ordena_grava_tempo(corteBottomUp, tempos,reader);
+            rewind(reader);
+            break;
+
+        case 7:
+            tempos = fopen("tempos/huffmanTree.txt", "w");
+            le_ordena_grava_tempo(corteBottomUp, tempos,reader);
             rewind(reader);
             break;
         }

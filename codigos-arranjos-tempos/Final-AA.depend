@@ -33,3 +33,37 @@
 1501640752 source:/home/vinicius/Área de Trabalho/Trabalho_AA-master/AA_final/ordenacoes/tempos.c
 	"tempos.h"
 
+1498770786 source:/home/vinicius/Documentos/Trabalho-AA/codigos-arranjos-tempos/leitura.c
+	"leitura.h"
+
+1498770786 /home/vinicius/Documentos/Trabalho-AA/codigos-arranjos-tempos/leitura.h
+	<stdio.h>
+	<string.h>
+
+1501640911 source:/home/vinicius/Documentos/Trabalho-AA/codigos-arranjos-tempos/main.c
+	"ordenacoes.h"
+
+1501638900 /home/vinicius/Documentos/Trabalho-AA/codigos-arranjos-tempos/ordenacoes.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tempos.h"
+
+1501640416 /home/vinicius/Documentos/Trabalho-AA/codigos-arranjos-tempos/tempos.h
+	<stdint.h>
+	<time.h>
+	"algoritmos.h"
+	"leitura.h"
+
+1501645226 /home/vinicius/Documentos/Trabalho-AA/codigos-arranjos-tempos/algoritmos.h
+	<stdlib.h>
+	<math.h>
+	<stdio.h>
+	<values.h>
+
+1501640752 source:/home/vinicius/Documentos/Trabalho-AA/codigos-arranjos-tempos/tempos.c
+	"tempos.h"
+
+1501645358 source:/home/vinicius/Documentos/Trabalho-AA/codigos-arranjos-tempos/algoritmos.c
+	"algoritmos.h"
+
