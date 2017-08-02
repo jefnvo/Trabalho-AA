@@ -1,1 +1,4 @@
-Aleatorio-64.txt
+Aleatorio-4.txt
+Aleatorio-8.txt
+Aleatorio-16.txt
+Aleatorio-32.txt
