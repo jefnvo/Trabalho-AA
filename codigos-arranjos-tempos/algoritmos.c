@@ -7,434 +7,13 @@ int max(int a, int b)
     else return b;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-int MatrixChainOrder(int p[], int i, int j)
-{
-    if(i == j)
-        return 0;
-    int k;
-    int min = INT_MAX;
-    int count;
-
-    for (k = i; k <j; k++)
-    {
-        count = MatrixChainOrder(p, i, k) +
-                MatrixChainOrder(p, k+1, j) +
-                p[i-1]*p[k]*p[j];
-
-        if (count < min)
-            min = count;
-    }
-
-    return min;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-int subsequenciaComumMaxima(int *a, int size)
-{
-   int max_so_far = 0, max_ending_here = 0;
-   for (int i = 0; i < size; i++)
-   {
-       max_ending_here = max_ending_here + a[i];
-       if (max_ending_here < 0)
-           max_ending_here = 0;
-
-       else if (max_so_far < max_ending_here)
-           max_so_far = max_ending_here;
-   }
-   return max_so_far;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#define MAX_TREE_HT 100
-
-// A Huffman tree node
-struct MinHeapNode
-{
-    char data;  // One of the input characters
-    unsigned freq;  // Frequency of the character
-    struct MinHeapNode *left, *right; // Left and right child of this node
-};
-
-// A Min Heap:  Collection of min heap (or Hufmman tree) nodes
-struct MinHeap
-{
-    unsigned size;    // Current size of min heap
-    unsigned capacity;   // capacity of min heap
-    struct MinHeapNode **array;  // Attay of minheap node pointers
-};
-
-// A utility function allocate a new min heap node with given character
-// and frequency of the character
-struct MinHeapNode* newNode(char data, unsigned freq)
-{
-    struct MinHeapNode* temp =
-          (struct MinHeapNode*) malloc(sizeof(struct MinHeapNode));
-    temp->left = temp->right = NULL;
-    temp->data = data;
-    temp->freq = freq;
-    return temp;
-}
-
-// A utility function to create a min heap of given capacity
-struct MinHeap* createMinHeap(unsigned capacity)
-{
-    struct MinHeap* minHeap =
-         (struct MinHeap*) malloc(sizeof(struct MinHeap));
-    minHeap->size = 0;  // current size is 0
-    minHeap->capacity = capacity;
-    minHeap->array =
-     (struct MinHeapNode**)malloc(minHeap->capacity * sizeof(struct MinHeapNode*));
-    return minHeap;
-}
-
-// A utility function to swap two min heap nodes
-void swapMinHeapNode(struct MinHeapNode** a, struct MinHeapNode** b)
-{
-    struct MinHeapNode* t = *a;
-    *a = *b;
-    *b = t;
-}
-
-// The standard minHeapify function.
-void minHeapify(struct MinHeap* minHeap, int idx)
-{
-    int smallest = idx;
-    int left = 2 * idx + 1;
-    int right = 2 * idx + 2;
-
-    if (left < minHeap->size &&
-        minHeap->array[left]->freq < minHeap->array[smallest]->freq)
-      smallest = left;
-
-    if (right < minHeap->size &&
-        minHeap->array[right]->freq < minHeap->array[smallest]->freq)
-      smallest = right;
-
-    if (smallest != idx)
-    {
-        swapMinHeapNode(&minHeap->array[smallest], &minHeap->array[idx]);
-        minHeapify(minHeap, smallest);
-    }
-}
-
-// A utility function to check if size of heap is 1 or not
-int isSizeOne(struct MinHeap* minHeap)
-{
-    return (minHeap->size == 1);
-}
-
-// A standard function to extract minimum value node from heap
-struct MinHeapNode* extractMin(struct MinHeap* minHeap)
-{
-    struct MinHeapNode* temp = minHeap->array[0];
-    minHeap->array[0] = minHeap->array[minHeap->size - 1];
-    --minHeap->size;
-    minHeapify(minHeap, 0);
-    return temp;
-}
-
-// A utility function to insert a new node to Min Heap
-void insertMinHeap(struct MinHeap* minHeap, struct MinHeapNode* minHeapNode)
-{
-    ++minHeap->size;
-    int i = minHeap->size - 1;
-    while (i && minHeapNode->freq < minHeap->array[(i - 1)/2]->freq)
-    {
-        minHeap->array[i] = minHeap->array[(i - 1)/2];
-        i = (i - 1)/2;
-    }
-    minHeap->array[i] = minHeapNode;
-}
-
-// A standard funvtion to build min heap
-void buildMinHeap(struct MinHeap* minHeap)
-{
-    int n = minHeap->size - 1;
-    int i;
-    for (i = (n - 1) / 2; i >= 0; --i)
-        minHeapify(minHeap, i);
-}
-
-// A utility function to print an array of size n
-void printArr(int arr[], int n)
-{
-    int i;
-    for (i = 0; i < n; ++i)
-        printf("%d", arr[i]);
-    printf("\n");
-}
-
-// Utility function to check if this node is leaf
-int isLeaf(struct MinHeapNode* root)
-{
-    return !(root->left) && !(root->right) ;
-}
-
-// Creates a min heap of capacity equal to size and inserts all character of
-// data[] in min heap. Initially size of min heap is equal to capacity
-struct MinHeap* createAndBuildMinHeap(char data[], int freq[], int size)
-{
-    struct MinHeap* minHeap = createMinHeap(size);
-    for (int i = 0; i < size; ++i)
-        minHeap->array[i] = newNode(data[i], freq[i]);
-    minHeap->size = size;
-    buildMinHeap(minHeap);
-    return minHeap;
-}
-
-// The main function that builds Huffman tree
-struct MinHeapNode* buildHuffmanTree(char data[], int freq[], int size)
-{
-    struct MinHeapNode *left, *right, *top;
-
-    // Step 1: Create a min heap of capacity equal to size.  Initially, there are
-    // modes equal to size.
-    struct MinHeap* minHeap = createAndBuildMinHeap(data, freq, size);
-
-    // Iterate while size of heap doesn't become 1
-    while (!isSizeOne(minHeap))
-    {
-        // Step 2: Extract the two minimum freq items from min heap
-        left = extractMin(minHeap);
-        right = extractMin(minHeap);
-
-        // Step 3:  Create a new internal node with frequency equal to the
-        // sum of the two nodes frequencies. Make the two extracted node as
-        // left and right children of this new node. Add this node to the min heap
-        // '$' is a special value for internal nodes, not used
-        top = newNode('$', left->freq + right->freq);
-        top->left = left;
-        top->right = right;
-        insertMinHeap(minHeap, top);
-    }
-
-    // Step 4: The remaining node is the root node and the tree is complete.
-    return extractMin(minHeap);
-}
-
-// Prints huffman codes from the root of Huffman Tree.  It uses arr[] to
-// store codes
-void printCodes(struct MinHeapNode* root, int arr[], int top)
-{
-    // Assign 0 to left edge and recur
-    if (root->left)
-    {
-        arr[top] = 0;
-        printCodes(root->left, arr, top + 1);
-    }
-
-    // Assign 1 to right edge and recur
-    if (root->right)
-    {
-        arr[top] = 1;
-        printCodes(root->right, arr, top + 1);
-    }
-
-    // If this is a leaf node, then it contains one of the input
-    // characters, print the character and its code from arr[]
-    if (isLeaf(root))
-    {
-        printf("%c: ", root->data);
-        printArr(arr, top);
-    }
-}
-
-// The main function that builds a Huffman Tree and print codes by traversing
-// the built Huffman Tree
-void HuffmanCodes(char data[], int freq[], int size)
-{
-   //  Construct Huffman Tree
-   struct MinHeapNode* root = buildHuffmanTree(data, freq, size);
-
-   // Print Huffman codes using the Huffman tree built above
-   int arr[MAX_TREE_HT], top = 0;
-   printCodes(root, arr, top);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-void recursiveActivitySelector(int s[], int f[], int i, int j, int a[])
-{
-     int m = i + 1;
-     while (m < j && s[m] < f[i]){
-           m = m + 1;
-     }
-     if (m < j){
-           a[m] = 1;
-           recursiveActivitySelector(s,f,m,j,a);
-     }
-}
-
-void printMaxActivities(int *s, int *f, int n)
-{
-    int i, j;
-    i = 0;
-    for (j = 1; j < n; j++)
-    {
-      if (s[j] >= f[i])
-      {
-          printf ("%d ", j);
-          i = j;
-      }
-    }
-}
-
 //corte haste
 int corteHaste(int *p, int n)
 {
     if(n<=0) return 0;
     int i;
     int q = INT_MIN;
-    for(i=0;i<n;i++)
+    for(i=0; i<n; i++)
     {
         q = max(q, p[i]+corteHaste(p, n-i-1));
     }
@@ -445,7 +24,7 @@ int corteHaste(int *p, int n)
 int corteHasteMemoizado(int *p, int n)
 {
     int i, r[n];
-    for(i=0;i<n;i++)
+    for(i=0; i<n; i++)
     {
         r[i] = INT_MIN;
 //        printf("%d  ", r[i]);
@@ -458,7 +37,7 @@ int corteHasteMemoizadoAux(int *p, int n, int *r)
     if(r[n-1]>=0) return r[n-1];
     int i;
     int q = INT_MIN;
-    for(i=0;i<n;i++)
+    for(i=0; i<n; i++)
     {
         q = max(q, p[i]+corteHaste(p, n-i-1));
         r[n] = q;
@@ -474,7 +53,7 @@ int corteBottomUp(int *p, int n)
     for(j=1; j<=n; j++)
     {
         q = INT_MIN;
-        for(i=1;i<=j;i++)
+        for(i=1; i<=j; i++)
         {
             q = max(q, p[i-1]+r[j-i-1]);
 //            printf("%d  ", q);
@@ -483,3 +62,143 @@ int corteBottomUp(int *p, int n)
     }
     return r[n-1];
 }
+
+
+
+int MatrixChainOrder ( int p [], int n )
+{
+    int ** m, i, j, k, L, q ;;
+    m = ( int *) malloc ( n * sizeof ( int ) ) ;
+    for ( i =0; i < n ; i ++)
+    {
+        m [ i ] = ( int *) malloc ( n * sizeof ( int ) ) ;
+    }
+
+    for ( i =1; i < n ; i ++)
+        m [ i ][ i ] = 0;
+
+    for ( L =2; L < n ; L ++)
+    {
+        for ( i =1; i <n - L +1; i ++)
+        {
+            j = i +L -1;
+            m [ i ][ j ] = INT_MAX ;
+            for ( k = i ; k <= j -1; k ++)
+            {
+                q = m [ i ][ k ] + m [ k +1][ j ] + p [i -1]* p [ k ]* p [ j ];
+                if ( q < m [ i ][ j ])
+                    m [ i ][ j ] = q ;
+            }
+        }
+    }
+    return m [1][ n -1];
+}
+
+
+int scm ( int *X, int *Y, int m, int n )
+{
+    if ( m == 0 || n == 0)
+        return 0;
+
+    if ( X [m -1] == Y [n -1])
+        return 1 + scm (X, Y, m -1, n -1) ;
+
+    else
+
+        return max ( scm (X, Y, m, n -1), scm (X, Y, m -1, n ) ) ;
+
+}
+
+
+void seltorIterativo ( int s [], int f [], int n )
+{
+    int i, j ;
+// printf (" Selected Activities are :\ n ") ;
+    i = 1;
+// printf (" A % d " , i ) ;
+    for ( j = 1; j < n ; j ++)
+    {
+        if ( s [ j ] >= f [ i ])
+        {
+// printf (" A % d " , j +1) ;
+            i = j;
+        }
+    }
+}
+
+void seletorRecursivo ( int s [], int f [], int i, int j, int a [])
+{
+    int m = i + 1;
+    while ( m < j && s [ m ] < f [ i ])
+    {
+        m = m + 1;
+    }
+    if ( m < j )
+    {
+        a [ m ] = 1;
+        seletorRecursivo (s,f,m,j, a ) ;
+    }
+}
+
+int mochilaBooleana (int *wt, int* val, int n, int w )
+{
+    int i, j, a, b, * mm, ** m, * s ;
+    mm = calloc (( n + 1) * ( w + 1), sizeof ( int ) ) ;
+    m = malloc (( n + 1) * sizeof ( int *) ) ;
+    m [0] = mm ;
+    for ( i = 1; i <= n ; i ++)
+    {
+        m [ i ] = & mm [ i * ( w + 1) ];
+        for ( j = 0; j <= w ; j ++)
+        {
+            if ( items [ i - 1]. weight > j )
+                m [ i ][ j ] = m [ i - 1][ j ];
+
+            else
+            {
+                a = m [ i - 1][ j ];
+                b = m [ i - 1][ j - items [ i - 1]. weight ] + items [ i - 1]. value ;
+                m [ i ][ j ] = a > b ? a : b ;
+            }
+
+        }
+    }
+    s = calloc (n, sizeof ( int ) ) ;
+    for ( i = n, j = w ; i > 0; i - -)
+    {
+        if ( m [ i ][ j ] > m [ i - 1][ j ])
+        {
+            s [ i - 1] = 1;
+            j -= items [ i - 1]. weight ;
+        }
+    }
+    free ( mm ) ;
+    free ( m ) ;
+    return s ;
+
+}
+
+int mochilaFracionaria ( int w, int *wt, int* val, int n )
+{
+    if ( n == 0 || W == 0)
+        return 0;
+
+    if ( wt [n -1] > W )
+        return MochilaFracionaria (W, wt, val, n -1) ;
+
+    else return max ( val [n -1] + MochilaFracionaria (W - wt [n -1], wt, val, n -1),
+                          MochilaFracionaria (W, wt, val, n -1 ) ) ;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

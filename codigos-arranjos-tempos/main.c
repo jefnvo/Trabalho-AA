@@ -13,7 +13,7 @@ int main()
         printf("1 - Corte haste\n");
         printf("2 - Corte haste memoizado\n");
         printf("3 - Corte haste bottom up\n");
-        printf("4 - \n");
+        printf("4 - SCM\n");
         printf("5 - Seletor guloso de atividades\n");
         printf("6 - Seletor guloso de atividades recursivo\n");
         printf("7 - Arvore Huffman\n");
