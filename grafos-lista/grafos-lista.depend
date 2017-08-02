@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1501646947 source:/home/jeff/Documentos/3 - Segundo Trabalho AA/Grafos/grafos-lista/grafos.c
+	"grafos.h"
+
+1501646917 /home/jeff/Documentos/3 - Segundo Trabalho AA/Grafos/grafos-lista/grafos.h
+	<stdio.h>
+	<stdlib.h>
+
+1501647146 source:/home/jeff/Documentos/3 - Segundo Trabalho AA/Grafos/grafos-lista/main.c
+	"grafos.h"
+

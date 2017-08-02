@@ -30,53 +30,63 @@ int main()
             tempos = fopen("tempos/corteHaste.txt", "w");
             le_ordena_grava_tempo(corteHaste,tempos,reader);
             rewind(reader);
+            printf("Feito\n");
             break;
 
         case 2:
             tempos = fopen("tempos/corteHasteMemoizado.txt", "w");
             le_ordena_grava_tempo(corteHasteMemoizado, tempos,reader);
             rewind(reader);
+            printf("Feito\n");
             break;
 
         case 3:
             tempos = fopen("tempos/corteHasteBottomUp.txt", "w");
             le_ordena_grava_tempo(corteBottomUp, tempos,reader);
             rewind(reader);
+            printf("Feito\n");
             break;
 
         case 4:
             tempos = fopen("tempos/radixsort.txt", "w");
 //            le_ordena_grava_tempo(radixSort, tempos, reader);
             rewind(reader);
+            printf("Feito\n");
             break;
 
         case 5:
             tempos = fopen("tempos/seletorGuloso.txt", "w");
             le_ordena_grava_tempo(corteBottomUp, tempos,reader);
             rewind(reader);
+            printf("Feito\n");
             break;
 
         case 6:
             tempos = fopen("tempos/seletorGulosoRecursivo.txt", "w");
             le_ordena_grava_tempo(corteBottomUp, tempos,reader);
             rewind(reader);
+            printf("Feito\n");
             break;
 
         case 7:
             tempos = fopen("tempos/huffmanTree.txt", "w");
             le_ordena_grava_tempo(corteBottomUp, tempos,reader);
             rewind(reader);
+            printf("Feito\n");
+            break;
 
         case 8:
             tempos = fopen("tempos/subsequenciaComumMaxima.txt", "w");
             le_ordena_grava_tempo(subsequenciaComumMaxima, tempos,reader);
             rewind(reader);
+            printf("Feito\n");
+            break;
 
         case 9:
             tempos = fopen("tempos/parentizacao.txt", "w");
             le_ordena_grava_tempo(corteBottomUp, tempos,reader);
             rewind(reader);
-
+            printf("Feito\n");
             break;
         }
     }

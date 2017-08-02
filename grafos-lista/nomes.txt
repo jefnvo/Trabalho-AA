@@ -1,0 +1,11 @@
+
+grafo-aleatorio256.txt
+grafo-aleatorio512.txt
+grafo-aleatorio1024.txt
+grafo-aleatorio2048.txt
+grafo-aleatorio4096.txt
+grafo-aleatorio8192.txt
+grafo-aleatorio16384.txt
+grafo-aleatorio32768.txt
+grafo-aleatorio65536.txt
+grafo-aleatorio131072.txt

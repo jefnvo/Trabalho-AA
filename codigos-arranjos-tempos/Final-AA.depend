@@ -68,3 +68,38 @@
 1501646068 source:/home/vinicius/Documentos/Trabalho-AA/codigos-arranjos-tempos/algoritmos.c
 	"algoritmos.h"
 
+1501648459 source:/home/jeff/Documentos/GitHub/Trabalho-AA/codigos-arranjos-tempos/algoritmos.c
+	"algoritmos.h"
+
+1501648459 /home/jeff/Documentos/GitHub/Trabalho-AA/codigos-arranjos-tempos/algoritmos.h
+	<stdlib.h>
+	<math.h>
+	<stdio.h>
+	<values.h>
+
+1501648460 source:/home/jeff/Documentos/GitHub/Trabalho-AA/codigos-arranjos-tempos/leitura.c
+	"leitura.h"
+
+1501648460 /home/jeff/Documentos/GitHub/Trabalho-AA/codigos-arranjos-tempos/leitura.h
+	<stdio.h>
+	<string.h>
+
+1501648760 source:/home/jeff/Documentos/GitHub/Trabalho-AA/codigos-arranjos-tempos/main.c
+	"ordenacoes.h"
+	"algoritmos.h"
+
+1501648460 /home/jeff/Documentos/GitHub/Trabalho-AA/codigos-arranjos-tempos/ordenacoes.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tempos.h"
+
+1501648460 /home/jeff/Documentos/GitHub/Trabalho-AA/codigos-arranjos-tempos/tempos.h
+	<stdint.h>
+	<time.h>
+	"algoritmos.h"
+	"leitura.h"
+
+1501648460 source:/home/jeff/Documentos/GitHub/Trabalho-AA/codigos-arranjos-tempos/tempos.c
+	"tempos.h"
+
