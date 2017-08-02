@@ -4,5 +4,5 @@
 
 #include "tempos.h"
 
-#define NOMES "../arranjos/nomes.txt"
+#define NOMES "arranjos/nomes.txt"
 

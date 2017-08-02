@@ -1,4 +1,4 @@
-#include<values.h>
+#include "algoritmos.h"
 
 int max(int a, int b)
 {
@@ -9,7 +9,7 @@ int max(int a, int b)
 
 
 //corte haste
-int corteHaste(int p[], int n)
+int corteHaste(int *p, int n)
 {
     if(n<=0) return 0;
     int i;
@@ -22,7 +22,7 @@ int corteHaste(int p[], int n)
 }
 
 //corte haste memoizado
-int corteHasteMemoizado(int p[], int n)
+int corteHasteMemoizado(int *p, int n)
 {
     int i, r[n];
     for(i=0;i<n;i++)
@@ -47,7 +47,7 @@ int corteHasteMemoizadoAux(int *p, int n, int *r)
     return q;
 }
 
-int corteBottomUp(int p[], int n)
+int corteBottomUp(int *p, int n)
 {
     int r[n], i, j, q;
     r[0] = 0;
@@ -63,7 +63,3 @@ int corteBottomUp(int p[], int n)
     }
     return r[n-1];
 }
-
-
-
-

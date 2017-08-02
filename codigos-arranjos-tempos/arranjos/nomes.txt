@@ -1,4 +1,3 @@
-
 aleatorio256.txt
 aleatorio512.txt
 aleatorio1024.txt

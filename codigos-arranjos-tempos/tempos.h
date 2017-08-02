@@ -5,7 +5,7 @@
 #include "leitura.h"
 
 #define BILHAO 1000000000L
-#define NUM_EXECS 5
+#define NUM_EXECS 1
 
 #define CRONOMETRA1(funcao,vetor, tam) {                                                \
    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &inicio);                                    \
@@ -18,4 +18,4 @@
 struct timespec inicio, fim;
 uint64_t tempo_de_cpu;
 
-void le_ordena_grava_tempo (int funcao_ordenacao(int *arr, int tam), FILE *tempos, FILE *reader);
+void le_ordena_grava_tempo (void funcao_ordenacao(int *arr, int tam), FILE *tempos, FILE *reader);
