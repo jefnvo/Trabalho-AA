@@ -10,10 +10,17 @@ int corteBottomUp(int *p, int n);
 
 
 
-
 void printMaxActivities(int *s, int *f, int n);
 void recursiveActivitySelector(int s[], int f[], int i, int j, int a[]);
 
 
 
 
+
+int subsequenciaComumMaxima(int *a, int size);
+
+
+
+
+
+int MatrixChainOrder(int p[], int i, int j);

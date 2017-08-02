@@ -10,14 +10,15 @@ int main()
 
     do
     {
-        printf("1 - corte haste\n");
-        printf("2 - corte haste memoizado\n");
-        printf("3 - corte haste bottom up\n");
+        printf("1 - Corte haste\n");
+        printf("2 - Corte haste memoizado\n");
+        printf("3 - Corte haste bottom up\n");
         printf("4 - \n");
         printf("5 - Seletor guloso de atividades\n");
         printf("6 - Seletor guloso de atividades recursivo\n");
         printf("7 - Arvore Huffman\n");
-        printf("6 - Seletor guloso de atividades recursivo\n");
+        printf("8 - Subsequencia comum maxima\n");
+        printf("9 - Parentizacao\n");
         printf("0 - sair\n\n");
 
         fflush(stdin);
@@ -65,6 +66,17 @@ int main()
             tempos = fopen("tempos/huffmanTree.txt", "w");
             le_ordena_grava_tempo(corteBottomUp, tempos,reader);
             rewind(reader);
+
+        case 8:
+            tempos = fopen("tempos/subsequenciaComumMaxima.txt", "w");
+            le_ordena_grava_tempo(subsequenciaComumMaxima, tempos,reader);
+            rewind(reader);
+
+        case 9:
+            tempos = fopen("tempos/parentizacao.txt", "w");
+            le_ordena_grava_tempo(corteBottomUp, tempos,reader);
+            rewind(reader);
+
             break;
         }
     }

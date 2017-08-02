@@ -55,7 +55,7 @@
 	"algoritmos.h"
 	"leitura.h"
 
-1501645226 /home/vinicius/Documentos/Trabalho-AA/codigos-arranjos-tempos/algoritmos.h
+1501646201 /home/vinicius/Documentos/Trabalho-AA/codigos-arranjos-tempos/algoritmos.h
 	<stdlib.h>
 	<math.h>
 	<stdio.h>
@@ -64,6 +64,6 @@
 1501640752 source:/home/vinicius/Documentos/Trabalho-AA/codigos-arranjos-tempos/tempos.c
 	"tempos.h"
 
-1501645358 source:/home/vinicius/Documentos/Trabalho-AA/codigos-arranjos-tempos/algoritmos.c
+1501646068 source:/home/vinicius/Documentos/Trabalho-AA/codigos-arranjos-tempos/algoritmos.c
 	"algoritmos.h"
 
